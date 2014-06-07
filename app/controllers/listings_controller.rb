@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
-  before_filter :require_current_user, only: [:edit, :update, :destroy, :create]
+  before_filter :require_current_user, only: [:new, :edit, :update, :destroy, :create]
 
   def show
   end

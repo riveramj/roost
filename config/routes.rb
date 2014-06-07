@@ -8,7 +8,7 @@ Kula::Application.routes.draw do
 
   get :me, to: 'users#me', as: 'user_profile'
   resources :users
-  root 'user_sessions#new'
+  root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
