@@ -17,3 +17,8 @@
 
 // Loads all Bootstrap javascripts
 //= require bootstrap
+
+//= require lodash.min
+//= require_tree .
+//= require gmaps/google
+
