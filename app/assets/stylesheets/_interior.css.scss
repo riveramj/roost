@@ -2,11 +2,15 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-
-.navbar {
-  margin-bottom: 20px;
+.header {
+  margin-bottom: 40px;
 }
 
+.address-fields {
+  input {
+    margin-bottom: 2px;
+  }
+}
 .or {
   margin-top: 150px;
   text-align: center;
