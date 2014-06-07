@@ -37,7 +37,7 @@
   </div>
   <!-- End BS carousel -->
 
-  
+
   <h2 id="tag-line">
     Your New Home
   </h2>
@@ -55,14 +55,32 @@
         </li>
         <li id="map">
           <%= image_tag "sampleMap.png" %>
-
         </li>
       </ul>
 
     </div>
     <div class="col-md-4">
+      <h3>Inquire</h3>
+
+      <form id="inquiry" role="form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" class="form-control" placeholder="John Doe" type="text">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input id="phone" class="form-control" placeholder="###-###-####" type="tel">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" class="form-control" placeholder="name@you.com" type="email">
+        </div>
+
+        <button type="submit" class="btn btn-default">Inquire</button>
+      </form>
 
     </div>
   </div>
-
 </div>
