@@ -11,9 +11,20 @@
   list-style: none;
 }
 
-#map img { 
+#map img {
   max-width: none;
 }
 #map label { 
   width: auto; display:inline; 
 } 
+
+ul.photos {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li {
+    img {
+      display: block;
+    }
+  }
+}

@@ -61,16 +61,6 @@ class ListingPhoto
     @full_url = optimizedPhoto.url
     @thumb_url = resize.url
 
-
-class ListingPhoto
-  constructor: (result) ->
-    optimizedPhoto = result.optimized[0]
-    resize = result.resize[0]
-    @height = optimizedPhoto.meta.height
-    @width = optimizedPhoto.meta.width
-    @full_url = optimizedPhoto.url
-    @thumb_url = resize.url
-
 getLocation = ->
   if (navigator.geolocation) 
     navigator.geolocation.getCurrentPosition(showPosition)

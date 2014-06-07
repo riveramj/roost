@@ -1,118 +1,104 @@
-<form id="file-upload-form">
-  <input type="file" name="photos">
-</form>
-<%= form_for @listing, html: {id: 'listing-form'} do |f| %>
-  <% if @listing.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+<% if @listing.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
 
-      <ul>
+    <ul>
       <% @listing.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <ul class="photos">
-
-  </ul>
-  <div class="field">
-    <%= f.label :street1 %><br>
-    <%= f.text_field :street1 %>
-  </div>
-  <div class="field">
-    <%= f.label :street2 %><br>
-    <%= f.text_field :street2 %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :zip %><br>
-    <%= f.text_field :zip %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.number_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :tagline %><br>
-    <%= f.text_field :tagline %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :permalink %><br>
-    <%= f.text_field :permalink %>
-  </div>
-  <div class="field">
-    <%= f.label :beds %><br>
-    <%= f.number_field :beds %>
-  </div>
-  <div class="field">
-    <%= f.label :baths %><br>
-    <%= f.number_field :baths %>
-  </div>
-  <div class="field">
-    <%= f.label :halfs %><br>
-    <%= f.number_field :halfs %>
-  </div>
-  <div class="field">
-    <%= f.label :sqft %><br>
-    <%= f.number_field :sqft %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :lot %><br>
-    <%= f.text_field :lot %>
-  </div>
-  <div class="field">
-    <%= f.label :construction_year %><br>
-    <%= f.text_field :construction_year %>
-  </div>
-  <div class="field">
-    <%= f.label :heat %><br>
-    <%= f.text_field :heat %>
-  </div>
-  <div class="field">
-    <%= f.label :cool %><br>
-    <%= f.text_field :cool %>
-  </div>
-  <div class="field">
-    <%= f.label :parking %><br>
-    <%= f.text_field :parking %>
-  </div>
-  <div class="field">
-    <%= f.label :basement %><br>
-    <%= f.text_field :basement %>
-  </div>
-  <div class="field">
-    <%= f.label :fireplace %><br>
-    <%= f.text_field :fireplace %>
-  </div>
-  <div class="field">
-    <%= f.label :floor %><br>
-    <%= f.text_field :floor %>
-  </div>
-  <div class="field">
-    <%= f.label :attic %><br>
-    <%= f.check_box :attic %>
-  </div>
-  <div class="field">
-    <%= f.label :laundry %><br>
-    <%= f.text_field :laundry %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    </ul>
   </div>
 <% end %>
+<div class="row">
+  <fieldset>
+    <legend>The Photos</legend>
+    <div class="col-md-4">
+      <form id="file-upload-form">
+        <div class="form-group">
+          <input type="file" name="photos">
+        </div>
+      </form>
+    </div>
+  </fieldset>
+  <%= form_for @listing, html: {id: 'listing-form'} do |f| %>
+    <div class="col-md-8">
+      <ul class="photos">
+        <% if @listing.photos.present? %>
+          <%= fields_for :photos do |photo| %>
+            <li class="photo-item form-group col-md-3">
+              <%= image_tag photo.object.thumbnail_url %>
+              <%= photo.text_field :caption, class: 'form-control' %>
+              <%= photo.hidden_field :width %>
+              <%= photo.hidden_field :height %>
+              <%= photo.hidden_field :full_url %>
+              <%= photo.hidden_field :thumbnail_url %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    </div>
+
+
+    <div class="row">
+      <fieldset>
+        <legend>The Essentials</legend>
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= f.label :price %>
+            <%= f.number_field :price, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :home_type %>
+            <%= f.select :home_type, ['Single Family', 'Multi-family', 'Condominium', 'Townhome'], {}, {class: 'form-control'} %>
+          </div>
+          <div class="form-group">
+            <%= f.label :sqft, 'Approximate Square Feet' %>
+            <%= f.number_field :sqft, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= f.label :beds, 'Bedrooms' %>
+            <%= f.number_field :beds, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :baths %>
+            <%= f.number_field :baths, class: 'form-control', placeholder: "Don't forget halfs! " %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= f.label :street1, 'Address' %>
+            <%= f.text_field :street1, class: 'form-control', placeholder: 'Street' %>
+            <%= f.text_field :street2, class: 'form-control', placeholder: 'Unit or Apt Number' %>
+            <%= f.text_field :city, class: 'form-control', placeholder: 'City' %>
+            <%= f.text_field :state, class: 'form-control', placeholder: 'State/Prov' %>
+            <%= f.text_field :zip, class: 'form-control', placeholder: 'Zip' %>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="row">
+      <fieldset>
+        <legend>The Details</legend>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <%= f.label :tagline %>
+            <%= f.text_field :tagline, class: 'form-control', placeholder: 'What makes your place unique?' %>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="form-group">
+            <%= f.label :description %>
+            <%= f.text_area :description, class: 'form-control', placeholder: 'Give us all the details' %>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Submit', class: 'btn btn-success' %>
+    </div>
+  <% end %>
