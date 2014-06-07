@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   before_filter :require_current_user, only: [:me]
+
   def create
     @user = User.create(user_params)
     unless @user.errors.present?
-
+      sign_in(@user)
       redirect_to user_profile_path
     else
       render action: :new

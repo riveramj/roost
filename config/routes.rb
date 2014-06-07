@@ -1,6 +1,6 @@
 Kula::Application.routes.draw do
 
-  resources :listings
+  resources :listings, except: [:index]
 
   get "listing/listing"
   delete :logout, to: 'user_sessions#destroy', as: 'logout'
