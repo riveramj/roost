@@ -1,14 +1,4 @@
 #= require jquery.transloadit2-v2-latest
-console.log 'party over here'
-getLocation = ->
-  if (navigator.geolocation)
-    navigator.geolocation.getCurrentPosition(showPosition)
-  else
-    console.log("Geolocation is not supported by this browser.")
-
-showPosition = (position) ->
-  console.log "(#{position.coords.latitude}, #{position.coords.longitude})"
-
 photoTemplate = _.template """
   <li class="photo-item">
     <img src="<%= thumb_url %>">
@@ -34,6 +24,7 @@ addPhotoForm = (photo, index) ->
       height: photo.height
       full_url: photo.full_url
       thumb_url: photo.thumb_url
+
 $ ->
   $('#file-upload-form').transloadit
     params:
@@ -50,7 +41,6 @@ $ ->
 
   # Map Geolocation Start
   handler = Gmaps.build('Google')
-
   handler.buildMap { internal: {id: 'address'} }, ->
     if(navigator.geolocation)
       navigator.geolocation.getCurrentPosition(displayOnMap)
@@ -61,10 +51,16 @@ $ ->
       lng: position.coords.longitude
 
     handler.map.centerOn(marker)
-  # Map Geolocation End
 
-  $('#find-me').click ->
-    getLocation()
+class ListingPhoto
+  constructor: (result) ->
+    optimizedPhoto = result.optimized[0]
+    resize = result.resize[0]
+    @height = optimizedPhoto.meta.height
+    @width = optimizedPhoto.meta.width
+    @full_url = optimizedPhoto.url
+    @thumb_url = resize.url
+
 
 class ListingPhoto
   constructor: (result) ->
