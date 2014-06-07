@@ -5,7 +5,6 @@ class UserSessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_profile_path
     else
-      #todo some errors i reckon
       render action: :new
     end
   end
@@ -18,4 +17,5 @@ class UserSessionsController < ApplicationController
   def new
 
   end
+
 end
