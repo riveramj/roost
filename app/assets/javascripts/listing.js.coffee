@@ -34,3 +34,15 @@ class ListingPhoto
     console.log resize
     @thumb_url = resize.url
 
+$(document).ready ->
+  $('#find-me').click ->
+    getLocation()
+
+getLocation = ->
+  if (navigator.geolocation) 
+    navigator.geolocation.getCurrentPosition(showPosition)
+  else
+    console.log("Geolocation is not supported by this browser.")
+
+showPosition = (position) -> 
+  console.log "(#{position.coords.latitude}, #{position.coords.longitude})"
