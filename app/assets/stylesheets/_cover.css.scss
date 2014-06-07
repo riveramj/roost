@@ -166,3 +166,16 @@ body {
     width: 700px;
   }
 }
+
+.made-with-soul {
+  background-image: image-url('switchyards_soul.png');
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 65px;
+  width: 45px;
+  background-size: auto 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
