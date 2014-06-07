@@ -1,0 +1,73 @@
+<h1>Listing listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Street1</th>
+      <th>Street2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Price</th>
+      <th>Tagline</th>
+      <th>Description</th>
+      <th>Permalink</th>
+      <th>Beds</th>
+      <th>Baths</th>
+      <th>Halfs</th>
+      <th>Sqft</th>
+      <th>Type</th>
+      <th>Lot</th>
+      <th>Construction year</th>
+      <th>Heat</th>
+      <th>Cool</th>
+      <th>Parking</th>
+      <th>Basement</th>
+      <th>Fireplace</th>
+      <th>Floor</th>
+      <th>Attic</th>
+      <th>Laundry</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= listing.street1 %></td>
+        <td><%= listing.street2 %></td>
+        <td><%= listing.city %></td>
+        <td><%= listing.state %></td>
+        <td><%= listing.zip %></td>
+        <td><%= listing.price %></td>
+        <td><%= listing.tagline %></td>
+        <td><%= listing.description %></td>
+        <td><%= listing.permalink %></td>
+        <td><%= listing.beds %></td>
+        <td><%= listing.baths %></td>
+        <td><%= listing.halfs %></td>
+        <td><%= listing.sqft %></td>
+        <td><%= listing.type %></td>
+        <td><%= listing.lot %></td>
+        <td><%= listing.construction_year %></td>
+        <td><%= listing.heat %></td>
+        <td><%= listing.cool %></td>
+        <td><%= listing.parking %></td>
+        <td><%= listing.basement %></td>
+        <td><%= listing.fireplace %></td>
+        <td><%= listing.floor %></td>
+        <td><%= listing.attic %></td>
+        <td><%= listing.laundry %></td>
+        <td><%= link_to 'Show', listing %></td>
+        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listing', new_listing_path %>

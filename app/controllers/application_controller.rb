@@ -13,4 +13,12 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id])
   end
   helper_method :current_user
+
+  def sign_in(user)
+    session[:user_id] = user.id
+  end
+
+  def sign_out
+    session.delete(:user_id)
+  end
 end

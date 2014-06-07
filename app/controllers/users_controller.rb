@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     unless @user.errors.present?
+
       redirect_to user_profile_path
     else
       render action: :new
