@@ -1,2 +1,25 @@
-<%= form_for user do %>
+<%= form_for user do |f| %>
+  <% if user.errors.present? %>
+    <div class="alert alert-warning">
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <button type="submit" class="btn btn-default">Log In</button>
 <% end %>
