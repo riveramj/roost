@@ -52,4 +52,5 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'gmaps4rails'
+gem 'geokit', branch: 'master', git: 'https://github.com/geokit/geokit.git'
 gem 'geokit-rails'
