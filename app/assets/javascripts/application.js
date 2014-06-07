@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require lodash.min
-//= require turbolinks
 //= require_tree .
 
 // Loads all Bootstrap javascripts
