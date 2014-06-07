@@ -1,5 +1,12 @@
 Kula::Application.routes.draw do
+
   get "listing/listing"
+  delete :logout, to: 'user_sessions#destroy', as: 'logout'
+  resources :user_sessions, only: [:new, :create]
+
+  get :me, to: 'users#me', as: 'user_profile'
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
