@@ -1,3 +1,6 @@
+<form id="file-upload-form">
+  <input type="file" name="photos">
+</form>
 <%= form_for @listing, html: {id: 'listing-form'} do |f| %>
   <% if @listing.errors.any? %>
     <div id="error_explanation">
@@ -10,12 +13,9 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <input type="file" name="photos">
-  </div>
-  <div class="photos">
+  <ul class="photos">
 
-  </div>
+  </ul>
   <div class="field">
     <%= f.label :street1 %><br>
     <%= f.text_field :street1 %>
