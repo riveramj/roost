@@ -1,68 +1,97 @@
-<div class="listing-form interior-page">
-  <p id="notice"><%= notice %></p>
-  <% @listing.photos.each do |pic| %>
-    <%= image_tag pic.full_url %>
-  <% end %>
-  <p>
-    <strong>Street1:</strong>
-    <%= @listing.street1 %>
-  </p>
+<div class="container-fluid">
+  <!-- Being BS carousel -->
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <% @listing.photos.each_with_index do |photo, i| %>
+        <div class="item <%= 'active' if i == 0 %>">
+          <%= image_tag photo.full_url %>
 
-  <p>
-    <strong>Street2:</strong>
-    <%= @listing.street2 %>
-  </p>
+          <div class="carousel-caption">
+            <%= photo.caption %>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
-  <p>
-    <strong>City:</strong>
-    <%= @listing.city %>
-  </p>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+  <!-- End BS carousel -->
 
-  <p>
-    <strong>State:</strong>
-    <%= @listing.state %>
-  </p>
+  <ul id="base-details">
+    <li class="beds-baths">
+      <div>
+        <span id="beds"><%= @listing.beds %></span>/<span id="baths"><%= @listing.baths %></span>
+      </div>
+      <div class="beds-baths">
+        br/ba
+      </div>
+    </li>
+    <li class="sqft">
+      <div>
+        <span class="sqft"><%= @listing.sqft %></span>
+      </div>
+      <div class="sqft">
+        sq.ft
+      </div>
+    </li>
+    <li id="price"><%= number_to_currency(@listing.price, precision: 0) %></li>
+  </ul>
 
-  <p>
-    <strong>Zip:</strong>
-    <%= @listing.zip %>
-  </p>
+  <div class="arrow-down"></div>
 
-  <p>
-    <strong>Price:</strong>
-    <%= @listing.price %>
-  </p>
+  <div class="row">
+    <div class="col-md-3">
+      <ul id="key-points">
+        <% @listing.feature_list.each do |feature| %>
+          <li class="key-point"><%= feature %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-3">
+      <div id="description">
+        <%= @listing.description %>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Inquire <%= @listing.id %></h3>
+
+      <div class="row">
+        <form id="inquiry" role="form">
+          <div class="col-md-6">
 
 
-  <p>
-    <strong>Description:</strong>
-    <%= @listing.description %>
-  </p>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" class="form-control" placeholder="John Doe" type="text">
+            </div>
 
-  <p>
-    <strong>Permalink:</strong>
-    <%= @listing.permalink %>
-  </p>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input id="phone" class="form-control" placeholder="###-###-####" type="tel">
+            </div>
+          </div>
+          <div class="col-md-6">
 
-  <p>
-    <strong>Beds:</strong>
-    <%= @listing.beds %>
-  </p>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" class="form-control" placeholder="name@you.com" type="email">
+            </div>
 
-  <p>
-    <strong>Baths:</strong>
-    <%= @listing.baths %>
-  </p>
-
-  <p>
-    <strong>Sqft:</strong>
-    <%= @listing.sqft %>
-  </p>
-
-  <p>
-    <strong>Type:</strong>
-    <%= @listing.home_type %>
-  </p>
-
-  <%= link_to 'Edit', edit_listing_path(@listing) %>
+            <button type="submit" class="btn btn-default">Inquire</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
+<% content_for :additional_js do %>
+  <%= javascript_include_tag 'listing' %>
+<% end %>

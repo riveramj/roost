@@ -3,8 +3,9 @@ class Listing < ActiveRecord::Base
   accepts_nested_attributes_for :photos
   before_save :geocode_address
   before_create :create_permalink
-  def features
-    description.split("\n")
+
+  def feature_list
+    features.split("\n")
   end
 
   def to_param
