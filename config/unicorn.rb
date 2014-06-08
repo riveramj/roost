@@ -9,7 +9,7 @@ pid "/var/www/kula/pids/unicorn.pid"
 # Path to logs
 # stderr_path "/path/to/log/unicorn.log"
 # stdout_path "/path/to/log/unicorn.log"
-stderr_path "/var/www/kul/log/unicorn.log"
+stderr_path "/var/www/kula/log/unicorn.log"
 stdout_path "/var/www/kula/log/unicorn.log"
 
 # Unicorn socket
