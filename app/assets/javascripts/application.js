@@ -13,12 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require lodash.min
-//= require_tree .
-
-// Loads all Bootstrap javascripts
 //= require bootstrap
 
-//= require lodash.min
-//= require_tree .
-//= require gmaps/google
+
 

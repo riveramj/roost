@@ -1,6 +1,8 @@
 class ListingsController < ApplicationController
+  layout "show", :only => [ :show ]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_filter :require_current_user, only: [:new, :edit, :update, :destroy, :create]
+  before_filter :validate_user, only: [:edit, :update, :destroy]
 
   def show
   end
@@ -12,12 +14,13 @@ class ListingsController < ApplicationController
 
   # GET /listings/1/edit
   def edit
+
   end
 
   # POST /listings
   # POST /listings.json
   def create
-    @listing = Listing.new(listing_params)
+    @listing = current_user.listings.new(listing_params)
 
     respond_to do |format|
       if @listing.save
@@ -55,20 +58,21 @@ class ListingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_listing
-      @listing = Listing.find(params[:id])
+      @listing = Listing.find_by(permalink: params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    def validate_user
+      unless current_user.listings.any? { |listing| listing == @listing }
+        redirect_to new_user_session_path
+      end
+    end
+
     def listing_params
       params.require(:listing).permit(
           :street1, :street2, :city, :state,
-          :zip, :price, :tagline, :description,
-          :permalink, :beds, :baths, :halfs,
-          :sqft, :type, :lot, :construction_year,
-          :heat, :cool, :parking, :basement,
-          :fireplace, :floor, :attic, :laundry,
+          :zip, :price, :features, :description,
+          :permalink, :beds, :baths, :sqft, :home_type,
           photos_attributes: [:full_url, :thumbnail_url, :caption, :width, :height])
     end
 end
