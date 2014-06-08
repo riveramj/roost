@@ -1,7 +1,26 @@
+@import 'variables';
+
 body {
+  background-color: $background-color;
+  font-family: $body-text;
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+.navbar-inverse, .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: $show-background;
+  border-color: $low-light;
+  .navbar-brand {
+    width: 100px;
+    height: 50px;
+    background-image: image-url('logo.png');
+    background-position: -4px center;
+    background-size: auto 65px;
+    background-repeat: no-repeat;
+  }
+}
+
+
 .header {
   margin-bottom: 40px;
 }
