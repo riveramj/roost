@@ -9,3 +9,10 @@ test:
   host: localhost
   username: postgres
   database: kula-test
+
+production:
+  adapter: postgresql
+  host: localhost
+  username: roost
+  password: roost
+  database: kula-prd
