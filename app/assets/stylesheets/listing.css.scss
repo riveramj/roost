@@ -3,12 +3,55 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 
-#tag-line {
-  text-align: center;
+@mixin leagueGothic($font-size) {
+  font-size: $font-size;
+  font-family: 'League Gothic';
 }
 
-#key-points {
+.carousel-caption {
+  background: rgba(52,56,68,0.7);
+  
+  padding: 0 0 0 7px;
+  
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  @include leagueGothic(25px);
+  text-shadow: none;
+  text-align: left;
+}
+
+#base-details {
+  color: white;
+  text-align: center;
+  @include leagueGothic(28px);
+  padding: 10px 0;
   list-style: none;
+  background: #40BA96;
+  
+  li {
+    display: inline-block;
+    border-right: solid 1px;
+    padding-right: 10px;
+    
+    &:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+  }
+  
+  div.beds-baths, div.sqft {
+    @include leagueGothic(12.5px);
+    display: block;
+    text-align: right;
+    line-height: .3;
+  }
+
+  #price {
+    vertical-align: top;
+  }
 }
 
 #map img {
