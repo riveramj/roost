@@ -19,7 +19,10 @@ body {
   }
 }
 
-
+label {
+  color: $text-highlight;
+  text-transform: uppercase;
+}
 .header {
   margin-bottom: 40px;
 }

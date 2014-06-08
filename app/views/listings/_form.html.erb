@@ -1,7 +1,6 @@
 <% if @listing.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
-
+    <h5><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h5>
     <ul>
       <% @listing.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -20,82 +19,55 @@
       </form>
     </div>
   </fieldset>
-  <%= form_for @listing, html: {id: 'listing-form'} do |f| %>
-    <div class="col-md-8">
-      <ul class="photos">
-        <% if @listing.photos.present? %>
-          <%= fields_for :photos do |photo| %>
-            <li class="photo-item form-group col-md-3">
-              <%= image_tag photo.object.thumbnail_url %>
-              <%= photo.text_field :caption, class: 'form-control' %>
-              <%= photo.hidden_field :width %>
-              <%= photo.hidden_field :height %>
-              <%= photo.hidden_field :full_url %>
-              <%= photo.hidden_field :thumbnail_url %>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
+  <%= form_for @listing, html: {id: 'listing-form', class: 'form-horizontal'} do |f| %>
+
+    <div class="form-group">
+      <%= f.label :price, class: 'col-md-2 control-label' %>
+      <div class="col-md-10">
+        <%= f.number_field :price, class: 'form-control' %>
+      </div>
     </div>
+
+    <div class="form-group">
+      <%= f.label :home_type, class: 'col-md-2 control-label' %>
+      <div class="col-md-4">
+        <%= f.select :home_type, ['Single Family', 'Multi-family', 'Condominium', 'Townhome'], {}, {class: 'form-control'} %>
+      </div>
+      <%= f.label :sqft, 'Sq. Ft', class: 'col-md-2 control-label' %>
+      <div class="col-md-4">
+        <%= f.number_field :sqft, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :beds, 'Bedrooms', class: 'col-md-2 control-label' %>
+      <div class="col-md-4">
+        <%= f.number_field :beds, class: 'form-control' %>
+      </div>
+      <%= f.label :baths, class: 'col-md-2 control-label' %>
+      <div class="col-md-4">
+        <%= f.number_field :baths, class: 'form-control', placeholder: "Don't forget halfs! " %>
+      </div>
     </div>
 
 
-    <div class="row">
-      <fieldset>
-        <legend>The Essentials</legend>
-        <div class="col-md-4">
-          <div class="form-group">
-            <%= f.label :price %>
-            <%= f.number_field :price, class: 'form-control' %>
-          </div>
-          <div class="form-group">
-            <%= f.label :home_type %>
-            <%= f.select :home_type, ['Single Family', 'Multi-family', 'Condominium', 'Townhome'], {}, {class: 'form-control'} %>
-          </div>
-          <div class="form-group">
-            <%= f.label :sqft, 'Approximate Square Feet' %>
-            <%= f.number_field :sqft, class: 'form-control' %>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group">
-            <%= f.label :beds, 'Bedrooms' %>
-            <%= f.number_field :beds, class: 'form-control' %>
-          </div>
-          <div class="form-group">
-            <%= f.label :baths %>
-            <%= f.number_field :baths, class: 'form-control', placeholder: "Don't forget halfs! " %>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="form-group address-fields">
-            <%= f.label :street1, 'Address' %>
-            <%= f.text_field :street1, class: 'form-control', placeholder: 'Street' %>
-            <%= f.text_field :street2, class: 'form-control', placeholder: 'Unit or Apt Number' %>
-            <%= f.text_field :city, class: 'form-control', placeholder: 'City' %>
-            <%= f.text_field :state, class: 'form-control', placeholder: 'State/Prov' %>
-            <%= f.text_field :zip, class: 'form-control', placeholder: 'Zip' %>
-          </div>
-        </div>
-      </fieldset>
-    </div>
-    <div class="row">
-      <fieldset>
-        <legend>The Details</legend>
-
-        <div class="col-md-4">
-          <div class="form-group">
-            <%= f.label :tagline %>
-            <%= f.text_field :tagline, class: 'form-control', placeholder: 'What makes your place unique?' %>
-          </div>
-        </div>
-        <div class="col-md-8">
-          <div class="form-group">
-            <%= f.label :description %>
-            <%= f.text_area :description, class: 'form-control', placeholder: 'Give us all the details' %>
-          </div>
-        </div>
-      </fieldset>
+    <div class="form-group">
+      <%= f.label :street1, 'Address', class: 'col-md-2 control-label' %>
+      <div class="col-md-4 address-fields">
+        <%= f.text_field :street1, class: 'form-control', placeholder: 'Street' %>
+        <%= f.text_field :street2, class: 'form-control', placeholder: 'Unit or Apt Number' %>
+        <%= f.text_field :city, class: 'form-control', placeholder: 'City' %>
+        <%= f.text_field :state, class: 'form-control', placeholder: 'State/Prov' %>
+        <%= f.text_field :zip, class: 'form-control', placeholder: 'Zip' %>
+      </div>
+      <%= f.label :tagline, class: 'col-md-2 control-label' %>
+      <div class="col-md-4" style="margin-bottom: 15px;">
+        <%= f.text_field :tagline, class: 'form-control', placeholder: 'What makes your place unique?' %>
+      </div>
+      <%= f.label :description, class: 'col-md-2 control-label' %>
+      <div class="col-md-4">
+        <%= f.text_area :description, class: 'form-control', placeholder: 'Give us all the details' %>
+      </div>
     </div>
 
     <div class="actions">
