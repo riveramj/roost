@@ -19,6 +19,14 @@ body {
   }
 }
 
+.interior-page {
+  margin-top: 60px;
+  h1 {
+    font-family: $headline-text;
+    font-size: 36px;
+    color: $show-background;
+  }
+}
 label {
   color: $text-highlight;
   text-transform: uppercase;

@@ -1,30 +1,23 @@
 class CreateListings < ActiveRecord::Migration
   def change
     create_table :listings do |t|
-      t.string :street1
+      t.boolean :for_rent, default: false
+      t.string :street1, null: false
       t.string :street2
       t.string :city
       t.string :state
       t.string :zip
       t.integer :price
-      t.string :tagline
+      t.text :features
       t.text :description
-      t.string :permalink
+      t.string :permalink, null: false
       t.integer :beds
-      t.integer :baths
-      t.integer :halfs
+      t.float :baths
       t.integer :sqft
-      t.string :type
-      t.string :lot
-      t.string :construction_year
-      t.string :heat
-      t.string :cool
-      t.string :parking
-      t.string :basement
-      t.string :fireplace
-      t.string :floor
-      t.boolean :attic
-      t.string :laundry
+      t.integer :user_id, null: false
+      t.string :home_type, null: false
+      t.decimal :lat
+      t.decimal :lng
 
       t.timestamps
     end

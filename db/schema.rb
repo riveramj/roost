@@ -13,39 +13,26 @@
 
 ActiveRecord::Schema.define(version: 20140607222733) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "listings", force: true do |t|
-    t.string   "street1"
+    t.boolean  "for_rent",    default: false
+    t.string   "street1",                     null: false
     t.string   "street2"
     t.string   "city"
     t.string   "state"
     t.string   "zip"
     t.integer  "price"
-    t.string   "tagline"
+    t.text     "features"
     t.text     "description"
-    t.string   "permalink"
+    t.string   "permalink",                   null: false
     t.integer  "beds"
-    t.integer  "baths"
-    t.integer  "halfs"
+    t.float    "baths"
     t.integer  "sqft"
-    t.string   "lot"
-    t.string   "construction_year"
-    t.string   "heat"
-    t.string   "cool"
-    t.string   "parking"
-    t.string   "basement"
-    t.string   "fireplace"
-    t.string   "floor"
-    t.boolean  "attic"
-    t.string   "laundry"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-    t.string   "home_type"
+    t.integer  "user_id",                     null: false
+    t.string   "home_type",                   null: false
     t.decimal  "lat"
     t.decimal  "lng"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "photos", force: true do |t|

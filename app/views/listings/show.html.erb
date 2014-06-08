@@ -1,126 +1,68 @@
-<p id="notice"><%= notice %></p>
-<% @listing.photos.each do |pic| %>
-  <%= image_tag pic.full_url %>
-<% end %>
-<p>
-  <strong>Street1:</strong>
-  <%= @listing.street1 %>
-</p>
+<div class="listing-form interior-page">
+  <p id="notice"><%= notice %></p>
+  <% @listing.photos.each do |pic| %>
+    <%= image_tag pic.full_url %>
+  <% end %>
+  <p>
+    <strong>Street1:</strong>
+    <%= @listing.street1 %>
+  </p>
 
-<p>
-  <strong>Street2:</strong>
-  <%= @listing.street2 %>
-</p>
+  <p>
+    <strong>Street2:</strong>
+    <%= @listing.street2 %>
+  </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @listing.city %>
-</p>
+  <p>
+    <strong>City:</strong>
+    <%= @listing.city %>
+  </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @listing.state %>
-</p>
+  <p>
+    <strong>State:</strong>
+    <%= @listing.state %>
+  </p>
 
-<p>
-  <strong>Zip:</strong>
-  <%= @listing.zip %>
-</p>
+  <p>
+    <strong>Zip:</strong>
+    <%= @listing.zip %>
+  </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
+  <p>
+    <strong>Price:</strong>
+    <%= @listing.price %>
+  </p>
 
-<p>
-  <strong>Tagline:</strong>
-  <%= @listing.tagline %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @listing.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @listing.description %>
+  </p>
 
-<p>
-  <strong>Permalink:</strong>
-  <%= @listing.permalink %>
-</p>
+  <p>
+    <strong>Permalink:</strong>
+    <%= @listing.permalink %>
+  </p>
 
-<p>
-  <strong>Beds:</strong>
-  <%= @listing.beds %>
-</p>
+  <p>
+    <strong>Beds:</strong>
+    <%= @listing.beds %>
+  </p>
 
-<p>
-  <strong>Baths:</strong>
-  <%= @listing.baths %>
-</p>
+  <p>
+    <strong>Baths:</strong>
+    <%= @listing.baths %>
+  </p>
 
-<p>
-  <strong>Halfs:</strong>
-  <%= @listing.halfs %>
-</p>
+  <p>
+    <strong>Sqft:</strong>
+    <%= @listing.sqft %>
+  </p>
 
-<p>
-  <strong>Sqft:</strong>
-  <%= @listing.sqft %>
-</p>
+  <p>
+    <strong>Type:</strong>
+    <%= @listing.home_type %>
+  </p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @listing.home_type %>
-</p>
-
-<p>
-  <strong>Lot:</strong>
-  <%= @listing.lot %>
-</p>
-
-<p>
-  <strong>Construction year:</strong>
-  <%= @listing.construction_year %>
-</p>
-
-<p>
-  <strong>Heat:</strong>
-  <%= @listing.heat %>
-</p>
-
-<p>
-  <strong>Cool:</strong>
-  <%= @listing.cool %>
-</p>
-
-<p>
-  <strong>Parking:</strong>
-  <%= @listing.parking %>
-</p>
-
-<p>
-  <strong>Basement:</strong>
-  <%= @listing.basement %>
-</p>
-
-<p>
-  <strong>Fireplace:</strong>
-  <%= @listing.fireplace %>
-</p>
-
-<p>
-  <strong>Floor:</strong>
-  <%= @listing.floor %>
-</p>
-
-<p>
-  <strong>Attic:</strong>
-  <%= @listing.attic %>
-</p>
-
-<p>
-  <strong>Laundry:</strong>
-  <%= @listing.laundry %>
-</p>
-
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+  <%= link_to 'Edit', edit_listing_path(@listing) %>
+</div>
