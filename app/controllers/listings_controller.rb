@@ -1,7 +1,9 @@
 class ListingsController < ApplicationController
+  layout "show", :only => [ :show ]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_filter :require_current_user, only: [:new, :edit, :update, :destroy, :create]
   before_filter :validate_user, only: [:edit, :update, :destroy]
+
   def show
   end
 
