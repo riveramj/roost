@@ -1,0 +1,32 @@
+$gray: #343844;
+
+.cover-heading {
+  text-align: center;
+  background-color: $gray;
+  width: 100%;
+  margin-top: -300px;
+
+  img {
+    padding: 10px 0 20px 0;
+  }
+}
+
+.arrow-down {
+  text-align: center;
+
+  width: 0;
+  height: 0;
+
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 45px solid $gray;
+  position: relative;
+  z-index: 2;
+
+  margin: 0 auto;
+}
+
+.lead {
+  font-family: 'Dosis', sans-serif;
+/*  font-size: ;*/
+}
