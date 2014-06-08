@@ -9,7 +9,7 @@ class ListingsController < ApplicationController
   end
 
   def index
-    location = [params[:lat], params[:lng]]
+    location = [params[:lat].to_f, params[:lng].to_f]
     @listing = Listing.closest(origin: location)
     redirect_to @listing
   end
