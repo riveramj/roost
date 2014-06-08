@@ -15,4 +15,4 @@ production:
   host: localhost
   username: roost
   password: roost
-  database: roost_prd
+  database: kula-prd
