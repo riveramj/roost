@@ -8,6 +8,14 @@
   font-family: 'League Gothic';
 }
 
+@mixin dosis($font-size) {
+  font-size: $font-size;
+  font-family: 'Dosis', sans-serif;
+}
+
+$green: #40BA96;
+$gray: #343844;
+
 .carousel-caption {
   background: rgba(52,56,68,0.7);
   
@@ -26,15 +34,18 @@
 #base-details {
   color: white;
   text-align: center;
-  @include leagueGothic(28px);
-  padding: 10px 0;
+  @include leagueGothic(34px);
   list-style: none;
-  background: #40BA96;
+  background: $green;
+  padding: 5px 0 0;
+  list-style: none;
+  letter-spacing: 1px;
+  margin-bottom: 0;
   
   li {
+    padding: 0 20px;
     display: inline-block;
     border-right: solid 1px;
-    padding-right: 10px;
     
     &:last-child {
       border-right: none;
@@ -46,12 +57,59 @@
     @include leagueGothic(12.5px);
     display: block;
     text-align: right;
-    line-height: .3;
+    margin-top: -13px;
   }
 
   #price {
     vertical-align: top;
   }
+}
+
+.arrow-down {
+	width: 0; 
+	height: 0; 
+
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid $green;
+  position: relative;
+  z-index: 2;
+
+  margin: 0 50%;
+  margin-bottom: -6px;
+}
+
+#key-points {
+  background-color: $gray;
+  color: #ffffff;
+  border-bottom: solid 1px white;
+  
+  list-style: none;
+ 
+  padding: 7px 0 7px 30px;
+  margin-bottom: 0;
+
+  line-height: 1.1;
+  
+  @include dosis(18px);
+
+  li:before {
+    content: '\2022';
+    margin-left: -16px;
+    color: $green;
+    margin-right: 5px;
+    font-size: 16px;
+  }
+}
+
+#description {
+  background-color: $gray;
+  color: #ffffff;
+  
+  @include dosis(18px);
+  line-height: 1.1;
+ 
+  padding: 15px;
 }
 
 #map img {

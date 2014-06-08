@@ -1,4 +1,4 @@
-<div class="main">
+<div class="container-fluid">
   <!-- Being BS carousel -->
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Wrapper for slides -->
@@ -33,65 +33,73 @@
   </div>
   <!-- End BS carousel -->
 
-  <div class="row">
-    <div class="col-md-8">
-      <ul id="base-details">
-        <li class="beds-baths">
-          <div>
-            <span id="beds">2</span> / <span id="baths">2.5</span>
-          </div>
-          <div class="beds-baths">
-            br/ba
-          </div>
-        </li>
-        <li class="sqft">
-          <div>
-            <span class="sqft">1300</span>
-          </div>
-          <div class="sqft">
-            sq.ft
-          </div>
-        </li>
-        <li id="price">$200,000</li>
-      </ul>
-      <ul id="key-points">
-        <li id="description">
-          Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.          Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod.
-        </li>
-        <li id="map">
-          <!--
-          <div style='width: 800px; height: 400px;'>
-            <div id="address" style='width: 800px; height: 400px;'></div>
-          </div>
-          -->
-        </li>
-      </ul>
+  <ul id="base-details">
+    <li class="beds-baths">
+      <div>
+        <span id="beds">2</span>/<span id="baths">2.5</span>
+      </div>
+      <div class="beds-baths">
+        br/ba
+      </div>
+    </li>
+    <li class="sqft">
+      <div>
+        <span class="sqft">1300</span>
+      </div>
+      <div class="sqft">
+        sq.ft
+      </div>
+    </li>
+    <li id="price">$200,000</li>
+  </ul>
 
+  <div class="arrow-down"></div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <ul id="key-points">
+        <li class="key-point">Master on Main</li>
+        <li class="key-point">New Kitchen</li>
+        <li class="key-point">Hardwoods Throughout</li>
+        <li class="key-point">Great Yard</li>
+      </ul>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
+      <div id="description">
+        Cute bungalow in blossoming East Atlanta neighborhood. 
+        Walking distance to East Atlanta Village.
+      </div>
+    </div>
+
+    <div class="col-md-6">
       <h3>Inquire</h3>
 
-      <form id="inquiry" role="form">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input id="name" class="form-control" placeholder="John Doe" type="text">
-        </div>
+      <div class="row">
+        <form id="inquiry" role="form">
+          <div class="col-md-6"> 
 
-        <div class="form-group">
-          <label for="phone">Phone</label>
-          <input id="phone" class="form-control" placeholder="###-###-####" type="tel">
-        </div>
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input id="email" class="form-control" placeholder="name@you.com" type="email">
-        </div>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" class="form-control" placeholder="John Doe" type="text">
+            </div>
 
-        <button type="submit" class="btn btn-default">Inquire</button>
-      </form>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input id="phone" class="form-control" placeholder="###-###-####" type="tel">
+            </div>
+          </div>
+          <div class="col-md-6">
 
-      <button id="find-me">Find Near By Houses</button>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" class="form-control" placeholder="name@you.com" type="email">
+            </div>
 
+            <button type="submit" class="btn btn-default">Inquire</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
