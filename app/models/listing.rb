@@ -1,4 +1,5 @@
 class Listing < ActiveRecord::Base
+  acts_as_mappable
   has_many :photos
   accepts_nested_attributes_for :photos
   before_save :geocode_address
