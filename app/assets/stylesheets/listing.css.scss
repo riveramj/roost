@@ -7,6 +7,15 @@
   font-size: $font-size;
   font-family: 'Dosis', sans-serif;
 }
+
+@mixin text-hide() {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
 #listing-details {
   padding-top: 0;
   .home-details {
@@ -17,21 +26,44 @@
       width: 100%;
       padding: 0;
     }
+    .contact {
+      width: 100%;
+      text-align: center;
+      .phone {
+        @include text-hide();
+        background-image: image-url('phone.png');
+        display: inline-block;
+        background-size: 100%;
+        width: 64px;
+        height: 64px;
+        margin: 16px;
+      }
+      .email {
+        @include text-hide();
+        background-image: image-url('email.png');
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        margin: 16px;
+      }
+    }
+
   }
 }
+
 $green: #40BA96;
 $gray: #343844;
 
 .carousel-caption {
-  background: rgba(52,56,68,0.7);
-  
+  background: rgba(52, 56, 68, 0.7);
+
   padding: 0 0 0 7px;
-  
+
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  
+
   @include leagueGothic(25px);
   text-shadow: none;
   text-align: left;
@@ -47,18 +79,18 @@ $gray: #343844;
   list-style: none;
   letter-spacing: 1px;
   margin-bottom: 0;
-  
+
   li {
     padding: 0 20px;
     display: inline-block;
     border-right: solid 1px;
-    
+
     &:last-child {
       border-right: none;
       padding-right: 0;
     }
   }
-  
+
   div.beds-baths, div.sqft {
     @include leagueGothic(12.5px);
     display: block;
@@ -72,8 +104,8 @@ $gray: #343844;
 }
 
 .arrow-down {
-	width: 0; 
-	height: 0; 
+  width: 0;
+  height: 0;
 
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
@@ -89,14 +121,14 @@ $gray: #343844;
   background-color: $gray;
   color: #ffffff;
   border-bottom: solid 1px white;
-  
+
   list-style: none;
- 
+
   padding: 7px 0 7px 30px;
   margin-bottom: 0;
 
   line-height: 1.1;
-  
+
   @include dosis(18px);
 
   li:before {
@@ -111,19 +143,21 @@ $gray: #343844;
 #description {
   background-color: $gray;
   color: #ffffff;
-  
+
   @include dosis(18px);
   line-height: 1.1;
- 
+
   padding: 15px;
 }
 
 #map img {
   max-width: none;
 }
-#map label { 
-  width: auto; display:inline; 
-} 
+
+#map label {
+  width: auto;
+  display: inline;
+}
 
 ul.photos {
   list-style-type: none;

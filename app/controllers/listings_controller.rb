@@ -73,6 +73,7 @@ class ListingsController < ApplicationController
           :street1, :street2, :city, :state,
           :zip, :price, :features, :description,
           :permalink, :beds, :baths, :sqft, :home_type,
+          :email, :phone,
           photos_attributes: [:full_url, :thumbnail_url, :caption, :width, :height])
     end
 end

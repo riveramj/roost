@@ -8,6 +8,10 @@ class Listing < ActiveRecord::Base
     features.split("\n")
   end
 
+  def tel
+    "tel:+1#{phone.gsub(/\D/, '')}"
+  end
+
   def to_param
     self.permalink
   end

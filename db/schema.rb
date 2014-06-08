@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140607222733) do
+ActiveRecord::Schema.define(version: 20140608183314) do
 
   create_table "listings", force: true do |t|
     t.boolean  "for_rent",    default: false
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20140607222733) do
     t.decimal  "lng"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone"
+    t.string   "email"
   end
 
   create_table "photos", force: true do |t|
