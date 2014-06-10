@@ -144,6 +144,14 @@ ul#key-points {
   }
 }
 
+.description, div.key-points, .contact-method {
+  padding-right: 0;
+}
+
+.show-listing {
+  margin-right: 0;
+}
+
 #house-description {
   background-color: $gray;
   color: #ffffff;
@@ -178,6 +186,7 @@ ul.photos {
 
 .logo {
   text-align: center;
+  margin-top: -45px;
 }
 
 
