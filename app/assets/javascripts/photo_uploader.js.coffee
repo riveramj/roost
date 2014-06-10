@@ -11,7 +11,7 @@ class ListingPhoto
 photoTemplate = _.template """
   <li class="photo-item">
     <img src="<%= thumb_url %>">
-    <input type="text" name="listing[photos_attributes][<%= idx %>][caption]">
+    <input type="text" name="listing[photos_attributes][<%= idx %>][caption]" placeholder="Photo Caption">
     <input name="listing[photos_attributes][<%= idx %>][width]" type="hidden" value="<%= width %>">
     <input name="listing[photos_attributes][<%= idx %>][height]" type="hidden" value="<%= height %>">
     <input name="listing[photos_attributes][<%= idx %>][full_url]" type="hidden" value="<%= full_url %>">
@@ -40,6 +40,11 @@ $ ->
       auth:
         key: 'af63cd20ee4e11e3b5c2cb0081e748aa' #todo lol wat security?
       template_id: 'bf039670ee4e11e3b5c2cb0081e748aa'
+      steps:
+        thumb: 
+          robot: "/image/resize",
+          width: 200,
+          height: 200,
     triggerUploadOnFileSelection: true
     autoSubmit: false
     onSuccess: uploadSuccess
