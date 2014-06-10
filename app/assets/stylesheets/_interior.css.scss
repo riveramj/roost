@@ -44,9 +44,24 @@ label {
   visibility: hidden;
 }
 
+.contact {
+  margin-bottom: 50px;
+}
+
+.actions {
+  margin-top: 100px;
+}
+
+#file-upload-form {
+  margin-top: -110px;
+}
+
+
 @media (max-width: 900px) {
   .or {
     visibility: visible;
     margin-top: 40px;
   }
 }
+
+
