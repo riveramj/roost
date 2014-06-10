@@ -117,7 +117,7 @@ $gray: #343844;
   margin-bottom: -6px;
 }
 
-#key-points {
+ul#key-points {
   background-color: $gray;
   color: #ffffff;
   border-bottom: solid 1px white;
@@ -140,7 +140,7 @@ $gray: #343844;
   }
 }
 
-#description {
+#house-description {
   background-color: $gray;
   color: #ffffff;
 
@@ -148,15 +148,6 @@ $gray: #343844;
   line-height: 1.1;
 
   padding: 15px;
-}
-
-#map img {
-  max-width: none;
-}
-
-#map label {
-  width: auto;
-  display: inline;
 }
 
 ul.photos {
@@ -169,3 +160,43 @@ ul.photos {
     }
   }
 }
+
+
+@media (min-width: 992px) {
+  .arrow-down {
+    display: none;
+  }
+
+  div.key-points {
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 15px;
+  }
+
+  .description {
+    padding: 0;
+  }
+
+  .show-listing {
+    display: table;
+    margin-left: 0;
+    margin-right: 0;
+
+    &:before {
+      content:'';
+      display: none;
+    }
+
+    div.key-points, .description {
+      float: none;
+      display: table-cell;
+      vertical-align: top;
+      background-color: $gray;
+    }
+
+    ul#key-points {
+      border-bottom: none;
+    }
+  }
+}
+

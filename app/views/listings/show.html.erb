@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div>
   <!-- Being BS carousel -->
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
     <!-- Wrapper for slides -->
@@ -46,16 +46,16 @@
 
   <div class="arrow-down"></div>
 
-  <div class="row">
-    <div class="col-md-3">
+  <div class="row show-listing">
+    <div class="col-md-3 key-points">
       <ul id="key-points" class="home-details">
         <% @listing.feature_list.each do |feature| %>
           <li class="key-point"><%= feature %></li>
         <% end %>
       </ul>
     </div>
-    <div class="col-md-3 ">
-      <div id="description" class="home-details">
+    <div class="col-md-3 description">
+      <div id="house-description" class="home-details">
         <%= @listing.description %>
       </div>
     </div>
