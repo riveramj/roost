@@ -60,8 +60,11 @@
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="arrow-down gray"></div>
+
+    <div class="col-md-6 contact-method">
       <div class="contact">
+        <h3 id="contact-seller">Contact Seller</h3>
         <% if @listing.phone %>
           <a href="<%= @listing.tel %>" class="phone">Call <%= @listing.phone %></a>
         <% end %>
@@ -70,6 +73,9 @@
         <% end %>
       </div>
     </div>
+  </div>
+  <div class="logo">
+    <%= image_tag("logo.png", :alt => "Roost Logo") %>
   </div>
 </div>
 

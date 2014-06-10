@@ -117,6 +117,10 @@ $gray: #343844;
   margin-bottom: -6px;
 }
 
+.arrow-down.gray {
+  border-top: 6px solid $gray;  
+}
+
 ul#key-points {
   background-color: $gray;
   color: #ffffff;
@@ -159,6 +163,21 @@ ul.photos {
       display: block;
     }
   }
+}
+
+.contact-method {
+  background: $green;
+  
+  #contact-seller {
+    margin: 0;
+    color: #ffffff;
+    padding-top: 15px;
+  }
+  
+}
+
+.logo {
+  text-align: center;
 }
 
 
