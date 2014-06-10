@@ -92,10 +92,10 @@ $gray: #343844;
   }
 
   div.beds-baths, div.sqft {
-    @include leagueGothic(12.5px);
+    @include leagueGothic(12px);
     display: block;
     text-align: right;
-    margin-top: -13px;
+    margin-top: -10px;
   }
 
   li.beds-baths {
