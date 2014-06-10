@@ -41,7 +41,12 @@ label {
   }
 }
 .or {
-  margin-top: 150px;
-  text-align: center;
-  font-weight: bold;
+  visibility: hidden;
+}
+
+@media (max-width: 900px) {
+  .or {
+    visibility: visible;
+    margin-top: 40px;
+  }
 }
