@@ -98,6 +98,14 @@ $gray: #343844;
     margin-top: -13px;
   }
 
+  li.beds-baths {
+    padding-left: 0;
+  }
+  
+  li.sqft, li#price {
+    margin-left: -5px;
+  }
+
   #price {
     vertical-align: top;
   }
