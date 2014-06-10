@@ -44,22 +44,22 @@ $gray: #343844;
   font-size: 30px;
 
   line-height: 7;
-  
-
   text-transform: uppercase;
+
+  text-align: center;
 
   li {
     display: inline-block;
-    padding: 0 40px;
   }
   
   #sell {
-    padding-left: 35px;
+    padding-right: 40px;
     border-right: solid #ffffff 2px;
   }
 
   #buy {
     margin-left: -3px;
+    padding-left: 40px;
   }
 }
 
@@ -97,19 +97,16 @@ $gray: #343844;
   #sell-buy {
     font-size: 20px;
     line-height: 3;
+    text-align: center;
 
     #sell {
+      padding-right: 15px;
+      border-right: solid #ffffff 1px;
+    }
+    
+    #buy {
       padding-left: 15px;
     }
-    
-    li {
-      padding: 0 20px;
-    }
 
-    
-/*    #buy {
-    display: none;
-  }*/
-    
   } 
 }
