@@ -40,11 +40,6 @@ $ ->
       auth:
         key: 'af63cd20ee4e11e3b5c2cb0081e748aa' #todo lol wat security?
       template_id: 'bf039670ee4e11e3b5c2cb0081e748aa'
-      steps:
-        thumb: 
-          robot: "/image/resize",
-          width: 200,
-          height: 200,
     triggerUploadOnFileSelection: true
     autoSubmit: false
     onSuccess: uploadSuccess
