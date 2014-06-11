@@ -223,11 +223,14 @@ ul.photos {
       display: none;
     }
 
-    div.key-points, .description {
+    div.key-points, .description, .contact-method {
       float: none;
       display: table-cell;
       vertical-align: top;
-      background-color: $gray;
+    }
+
+    div.key-points, .description {
+      background-color: $gray; 
     }
 
     ul#key-points {
@@ -244,6 +247,51 @@ ul.photos {
   }
   .logo {
     margin-top: 0;
+  }
+
+  .contact {
+    display: none;
+  }
+
+  .inquiry {
+    margin-right: 0;
+    
+    h3 {
+      margin-left: 15px;
+    }
+
+    button {
+      margin-top: 25px;
+    }
+  }
+
+  .carousel-caption {
+    font-size: 45px;
+  }
+
+  #base-details {
+    font-size: 50px;
+
+    li {
+      padding: 0 30px;
+    }
+    
+    .beds-baths {
+      padding-left: 0;
+    }
+    
+    div.sqft {
+      padding-right: 0;
+    }
+    
+    div.beds-baths, div.sqft {
+      font-size: 20px;
+      margin-top: -20px;
+    }
+  }
+
+  ul#key-points {
+    font-size: 25px;
   }
 }
 

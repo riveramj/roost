@@ -54,7 +54,7 @@
         <% end %>
       </ul>
     </div>
-    <div class="col-md-3 description">
+    <div class="col-md-5 description">
       <div id="house-description" class="home-details">
         <%= @listing.description %>
       </div>
@@ -62,7 +62,34 @@
 
     <div class="arrow-down gray"></div>
 
-    <div class="col-md-6 contact-method">
+    <div class="col-md-4 contact-method">
+      <div class="row inquiry">
+        <h3>Inquire</h3>
+        <form id="inquiry" role="form">
+          <div class="col-md-6"> 
+
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" class="form-control" placeholder="John Doe" type="text">
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input id="phone" class="form-control" placeholder="###-###-####" type="tel">
+            </div>
+          </div>
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" class="form-control" placeholder="name@you.com" type="email">
+            </div>
+
+            <button type="submit" class="btn btn-default">Inquire</button>
+          </div>
+        </form>
+      </div>
+      
       <div class="contact">
         <h3 id="contact-seller">Contact Seller</h3>
         <% if @listing.phone %>
