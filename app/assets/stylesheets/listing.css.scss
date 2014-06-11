@@ -54,6 +54,10 @@
 $green: #40BA96;
 $gray: #343844;
 
+.carousel-inner > .item > img {
+  margin: 0 auto;
+}
+
 .carousel-caption {
   background: rgba(52, 56, 68, 0.7);
 
