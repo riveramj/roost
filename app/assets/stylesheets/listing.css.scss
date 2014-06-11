@@ -26,7 +26,7 @@
       width: 100%;
       padding: 0;
     }
-    .contact {
+    .mobile-contact {
       width: 100%;
       text-align: center;
       .phone {
@@ -76,7 +76,7 @@ $gray: #343844;
 #base-details {
   color: white;
   text-align: center;
-  @include leagueGothic(27px);
+  @include leagueGothic(35px);
   list-style: none;
   background: $green;
   padding: 5px 0 0;
@@ -85,7 +85,7 @@ $gray: #343844;
   margin-bottom: 0;
 
   li {
-    padding: 0 15px;
+    padding: 0 20px;
     display: inline-block;
     border-right: solid 1px;
 
@@ -96,10 +96,10 @@ $gray: #343844;
   }
 
   div.beds-baths, div.sqft {
-    @include leagueGothic(12px);
+    @include leagueGothic(13px);
     display: block;
     text-align: right;
-    margin-top: -10px;
+    margin-top: -12px;
   }
 
   li.beds-baths {
@@ -198,7 +198,6 @@ ul.photos {
 
 .logo {
   text-align: center;
-  margin-top: -45px;
 }
 
 .inquiry {
@@ -208,6 +207,10 @@ ul.photos {
 @media (min-width: 992px) {
   .arrow-down {
     display: none;
+  }
+
+  .logo {
+    margin-top: -45px;
   }
 
   div.key-points {
