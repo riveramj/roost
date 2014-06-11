@@ -13,5 +13,5 @@
  *= require _interior
  *= require listings
  *= require listing
- *= require fonts
+ *= require stylesheet.css
  */
