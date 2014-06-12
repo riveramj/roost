@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require lodash.min
 //= require bootstrap
+//= require googleAnalytics
 
 
 
