@@ -16,8 +16,7 @@ stdout_path "/var/www/kula/log/unicorn.log"
 listen "/tmp/unicorn.kula.sock"
 
 # Number of processes
-# worker_processes 4
-worker_processes 2
+ worker_processes 4
 
 # Time-out
 timeout 30
