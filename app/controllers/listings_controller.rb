@@ -10,8 +10,13 @@ class ListingsController < ApplicationController
 
   def index
     location = [params[:lat].to_f, params[:lng].to_f]
-    @listing = Listing.closest(origin: location)
-    redirect_to @listing
+    @listing = Listing.closest(origin: location).first
+    if @listing.present?
+      render json: @listing
+    else
+      render json: {found: false}, status: :not_found
+    end
+
   end
 
   # GET /listings/new
