@@ -6,8 +6,12 @@ class Mailer < ActionMailer::Base
     mail(to: listing.email, subject: 'Thanks for Listing with Roost!')
   end
 
-  def inquiry(email)
-    @url = "foo.com"
-    mail(to: email, subject: 'Inquiry from person!')
+  def inquiry(listing, inquireName, inquireEmail, inquirePhone)
+    @name= inquireName
+    @email = inquireEmail
+    @phone = inquirePhone
+    @street1 = listing.street1
+
+    mail(to: listing.email, subject: "Inquiry on #{listing.street1}!")
   end
 end

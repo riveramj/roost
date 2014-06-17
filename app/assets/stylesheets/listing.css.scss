@@ -105,7 +105,7 @@ $gray: #343844;
   li.beds-baths {
     padding-left: 0;
   }
-  
+
   li.sqft, li#price {
     margin-left: -5px;
   }
@@ -130,7 +130,7 @@ $gray: #343844;
 }
 
 .arrow-down.gray {
-  border-top: 6px solid $gray;  
+  border-top: 6px solid $gray;
 }
 
 ul#key-points {
@@ -187,13 +187,13 @@ ul.photos {
 
 .contact-method {
   background: $green;
-  
+
   #contact-seller {
     margin: 0;
     color: #ffffff;
     padding-top: 15px;
   }
-  
+
 }
 
 .logo {
@@ -240,7 +240,7 @@ ul.photos {
     }
 
     div.key-points, .description {
-      background-color: $gray; 
+      background-color: $gray;
     }
 
     ul#key-points {
@@ -266,12 +266,12 @@ ul.photos {
   .inquiry {
     display: block;
     margin-right: 0;
-    
+
     h3 {
       margin-left: 15px;
     }
 
-    button {
+    .send-inquiry {
       margin-top: 25px;
     }
   }
@@ -286,15 +286,15 @@ ul.photos {
     li {
       padding: 0 30px;
     }
-    
+
     .beds-baths {
       padding-left: 0;
     }
-    
+
     div.sqft {
       padding-right: 0;
     }
-    
+
     div.beds-baths, div.sqft {
       font-size: 20px;
       margin-top: -20px;
@@ -305,4 +305,3 @@ ul.photos {
     font-size: 25px;
   }
 }
-

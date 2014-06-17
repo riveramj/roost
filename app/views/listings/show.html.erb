@@ -65,31 +65,32 @@
     <div class="col-md-4 contact-method">
       <div class="row inquiry">
         <h3>Inquire</h3>
-        <form id="inquiry" role="form">
-          <div class="col-md-6"> 
+        <%= form_tag do %>
+          <div class="col-md-6">
 
             <div class="form-group">
-              <label for="name">Name</label>
-              <input id="name" class="form-control" placeholder="John Doe" type="text">
+              <%= label_tag :name %>
+              <%= text_field_tag :name, nil, class: 'form-control', placeholder: 'John Doe' %>
             </div>
 
             <div class="form-group">
-              <label for="phone">Phone</label>
-              <input id="phone" class="form-control" placeholder="###-###-####" type="tel">
+              <%= label_tag :phone %>
+              <%= text_field_tag :phone, nil, class: 'form-control', placeholder: '###-###-####' %>
             </div>
           </div>
           <div class="col-md-6">
 
             <div class="form-group">
-              <label for="email">Email</label>
-              <input id="email" class="form-control" placeholder="name@you.com" type="email">
+              <%= label_tag :email %>
+              <%= text_field_tag :email, nil, class: 'form-control', placeholder: 'you@domain.com' %>
             </div>
 
-            <button type="submit" class="btn btn-default">Inquire</button>
+            <%= submit_tag 'Inquire', class: 'btn btn-default send-inquiry' %>
+
+            <% end %>
           </div>
-        </form>
       </div>
-      
+
       <div class="mobile-contact">
         <h3 id="contact-seller">Contact Seller</h3>
         <% if @listing.phone %>
@@ -105,4 +106,3 @@
     <%= image_tag("logo.png", :alt => "Roost Logo") %>
   </div>
 </div>
-

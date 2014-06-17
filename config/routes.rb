@@ -10,4 +10,6 @@ Kula::Application.routes.draw do
   resources :users
   root 'home#index'
   get ':id', to: 'listings#show'
+  post 'listings/:id', to: 'listings#inquire'
+
 end

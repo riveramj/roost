@@ -1,11 +1,25 @@
 class ListingsController < ApplicationController
 
-  layout "show", :only => [ :show ]
+  layout "show", :only => [ :show]
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_filter :require_current_user, only: [:new, :edit, :update, :destroy, :create]
   before_filter :validate_user, only: [:edit, :update, :destroy]
 
   def show
+  end
+
+  def inquire
+    name = params[:name]
+    phone = params[:phone]
+    email = params[:email]
+    id = params[:id]
+
+    @listing = Listing.find_by(permalink: id)
+
+    Mailer.inquiry(@listing, name, email, phone).deliver
+
+    redirect_to "/listings/#{id}"
+
   end
 
   def index
@@ -39,8 +53,8 @@ class ListingsController < ApplicationController
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
         format.json { render action: 'show', status: :created, location: @listing }
 
-        ListingConfirmation.new_listing(@listing).deliver
- 
+        Mailer.new_listing(@listing).deliver
+
       else
         format.html { render action: 'new' }
         format.json { render json: @listing.errors, status: :unprocessable_entity }
