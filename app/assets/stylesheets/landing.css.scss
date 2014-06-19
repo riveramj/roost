@@ -36,17 +36,13 @@ $gray: #343844;
 
 #sell-buy {
   list-style: none;
-  margin: 0 auto;
   padding: 0;
 
   font-family: 'Dosis', sans-serif;
   font-weight: 300;
-  font-size: 30px;
+  font-size: 35px;
 
-  line-height: 7;
   text-transform: uppercase;
-
-  text-align: center;
 
   li {
     display: inline-block;
@@ -95,6 +91,7 @@ $gray: #343844;
 
     #buy {
       display: block;
+      font-size: 25px;
     }
 
   }
