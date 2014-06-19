@@ -51,11 +51,6 @@ $gray: #343844;
   li {
     display: inline-block;
   }
-  
-  #sell {
-    padding-right: 40px;
-    border-right: solid #ffffff 2px;
-  }
 
   #buy {
     margin-left: -3px;
@@ -99,14 +94,9 @@ $gray: #343844;
     line-height: 3;
     text-align: center;
 
-    #sell {
-      padding-right: 10px;
-      border-right: solid #ffffff 1px;
-    }
-    
     #buy {
       padding-left: 10px;
     }
 
-  } 
+  }
 }
