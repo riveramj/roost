@@ -53,8 +53,7 @@ $gray: #343844;
   }
 
   #buy {
-    margin-left: -3px;
-    padding-left: 40px;
+    display: none;
   }
 }
 
@@ -95,7 +94,7 @@ $gray: #343844;
     text-align: center;
 
     #buy {
-      padding-left: 10px;
+      display: block;
     }
 
   }
